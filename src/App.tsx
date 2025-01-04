@@ -1,13 +1,12 @@
 import Button from "./components/Button";
-import Page from "./pages/Page";
+// import Page from "./pages/Page";
+// import Landing from "./pages/Landing";
+import CoolButton from "./components/CoolButton";
 
 function App() {
   return (
-    <div className="bg-black text-white">
-      <Page />
-      <div className="p-4 flex justify-center">
-        <Button variant="primary">Hello</Button>
-      </div>
+    <div className="flex flex-col items-center justify-center gap-3 h-screen">
+      <CoolButton text="hello" /> <Button variant="primary">Hello</Button>
     </div>
   );
 }
