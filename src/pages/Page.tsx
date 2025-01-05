@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const menuItems = [
-  { name: "Components", href: "#" },
+  { name: "Components", href: "" },
   { name: "Docs", href: "#" },
   { name: "Pro", href: "#" },
   { name: "Pricing", href: "#" },
