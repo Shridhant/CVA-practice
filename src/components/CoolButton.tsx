@@ -1,46 +1,80 @@
 import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "../utils/utils";
 
-interface CoolButtonProps {
+interface CoolButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
   text?: string;
 }
 
-export default function CoolButton({ text = "Button" }: CoolButtonProps) {
+export default function CoolButton({
+  text = "Button",
+  variant = "default",
+  className,
+  ...props
+}: CoolButtonProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <button
-      className="relative overflow-hidden group"
+      {...props}
+      className={cn(
+        buttonVariants({ variant }),
+        className,
+        "relative overflow-hidden group rounded-full px-3 py-2 flex items-center justify-center"
+      )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Background Animation */}
       <div
-        className={`flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full transition-all duration-300 ease-in-out ${
-          isHovered ? "pr-10" : "pr-4"
-        }`}
-      >
-        <div
-          className={`w-full h-full bg-blue-700 rounded-full absolute left-0 top-0 transition-all duration-300 ease-in-out ${
-            isHovered ? "scale-100" : "scale-0"
-          }`}
-        ></div>
+        className={cn(
+          "absolute left-0 top-0 h-full w-full rounded-full bg-blue-700 transition-transform duration-300",
+          isHovered ? "scale-100" : "scale-0"
+        )}
+      ></div>
 
+      {/* Content Wrapper */}
+      <div className="relative text-center z-10 flex items-center justify-center space-x-2">
+        {/* Text */}
         <p
-          className={`text-sm font-medium relative z-10 transition-colors duration-300 ${
-            isHovered ? "text-white" : "text-black"
-          } ${text.length > 10 ? "max-w-[120px] truncate" : ""}`}
+          className={cn(
+            "text-sm text-center font-medium transition-all duration-300",
+            isHovered ? "text-white" : ""
+          )}
         >
           {text}
         </p>
 
-        <ArrowUpRight
-          className={`w-5 h-5 absolute right-3 z-10 transition-all duration-300 ${
-            isHovered
-              ? "opacity-100 translate-x-0 text-white"
-              : "opacity-0 -translate-x-2 text-gray-700"
-          }`}
-        />
+        {/* Arrow Icon */}
+        <div
+          className={cn(
+            "transition-all duration-300 overflow-hidden",
+            isHovered ? "w-5 opacity-100" : "w-0 opacity-0"
+          )}
+        >
+          <ArrowUpRight className="w-5 h-5 text-white" />
+        </div>
       </div>
     </button>
   );
 }
+
+// Variants using class-variance-authority
+const buttonVariants = cva(
+  "inline-flex items-center justify-center border border-gray-300 transition-all duration-300 ease-in-out",
+  {
+    variants: {
+      variant: {
+        default: "bg-transparent",
+        primary: "bg-white text-blue-500 ",
+        secondary: "bg-green-500 text-white ",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+);

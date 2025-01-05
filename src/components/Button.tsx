@@ -1,31 +1,39 @@
-import { cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../utils/utils";
 
-type buttonProps = React.HTMLAttributes<HTMLButtonElement> & {
-  variant: "primary" | "secondary";
-  children: React.ReactNode;
-};
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof buttonVariants> & {
+    children: React.ReactNode;
+    bgColor?: string;
+  };
 
 export default function Button({
   className,
-  variant,
+  variant = "primary",
   children,
+  bgColor = "bg-blue-600",
   ...props
-}: buttonProps) {
+}: ButtonProps) {
   return (
     <button
       {...props}
       className={cn(
         buttonVariants({ variant }),
         className,
-        "relative group overflow-hidden"
+        "relative group overflow-hidden "
       )}
     >
-      <div className="inline-flex h-12 items-center justify-center px-6 text-white transition duration-500 group-hover:-translate-y-[150%]">
+      <div className="inline-flex h-10 items-center justify-center px-6 text-white transition-all duration-500 group-hover:-translate-y-[150%]">
         {children}
       </div>
-      <div className="absolute inline-flex h-12 w-full translate-y-[100%] items-center justify-center text-neutral-50 transition duration-500 group-hover:translate-y-0">
-        <span className="absolute h-full w-full translate-y-full skew-y-12 scale-y-0 bg-blue-600 transition duration-500 group-hover:translate-y-0 group-hover:scale-150"></span>
+
+      <div className="absolute inline-flex h-10 w-full translate-y-[100%] items-center justify-center text-neutral-50 transition duration-500 group-hover:translate-y-0">
+        <span
+          className={cn(
+            "absolute h-full w-full translate-y-full skew-y-10 scale-y-0 transition duration-500 group-hover:translate-y-0 group-hover:scale-150",
+            bgColor
+          )}
+        ></span>
         <span className="z-10">{children}</span>
       </div>
     </button>
@@ -38,7 +46,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: "bg-blue-400 text-white focus:ring-blue-500",
-        secondary: "bg-gray-500 text-white  focus:ring-gray-500",
+        secondary: "bg-gray-500 text-white focus:ring-gray-500",
       },
     },
     defaultVariants: {
