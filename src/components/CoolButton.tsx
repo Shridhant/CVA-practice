@@ -31,7 +31,7 @@ export default function CoolButton({
       {/* Background Animation */}
       <div
         className={cn(
-          "absolute left-0 top-0 h-full w-full rounded-full bg-blue-700 transition-transform duration-300",
+          "absolute left-0 top-0 h-full w-full rounded-full bg-violet-700 transition-transform duration-300",
           isHovered ? "scale-100" : "scale-0"
         )}
       ></div>
@@ -52,7 +52,7 @@ export default function CoolButton({
         <div
           className={cn(
             "transition-all duration-300 overflow-hidden",
-            isHovered ? "w-5 opacity-100" : "w-0 opacity-0"
+            isHovered ? "w-5 opacity-100 " : "w-0 opacity-0"
           )}
         >
           <ArrowUpRight className="w-5 h-5 text-white" />
@@ -71,6 +71,7 @@ const buttonVariants = cva(
         default: "bg-transparent",
         primary: "bg-white text-blue-500 ",
         secondary: "bg-green-500 text-white ",
+        tertiary: "text-white ",
       },
     },
     defaultVariants: {
