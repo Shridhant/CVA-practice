@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Button from "./Button";
+import { Lock } from "lucide-react";
 
 interface SignupModalProps {
   isOpen: boolean;
@@ -27,12 +29,12 @@ export default function Register({ isOpen, onClose }: SignupModalProps) {
             exit={{ y: 50, opacity: 0 }}
             transition={{ type: "spring", duration: 0.5 }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-black border border-gray-700 rounded-2xl max-w-md w-full mx-auto p-8"
+            className="bg-white text-black border border-gray-200 rounded-2xl max-w-md w-full mx-auto p-8 shadow-xl"
           >
             <div className="flex justify-between items-center mb-6">
               <button
                 onClick={onClose}
-                className="text-gray-500 hover:text-gray-400"
+                className="text-gray-600 hover:text-gray-800"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +51,12 @@ export default function Register({ isOpen, onClose }: SignupModalProps) {
                   />
                 </svg>
               </button>
-              <h2 className="text-2xl font-bold">Create your account</h2>
+              <div className="flex justify-center items-center gap-3">
+                <Lock className="w-6 h-6 text-black" />
+                <h2 className="text-2xl font-bold text-center flex-grow">
+                  Sign Up!
+                </h2>
+              </div>
               <div className="w-6"></div>
             </div>
             <form className="space-y-6">
@@ -59,7 +66,7 @@ export default function Register({ isOpen, onClose }: SignupModalProps) {
                   placeholder="Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 bg-black border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1d9bf0] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1d9bf0] focus:border-transparent"
                 />
               </div>
               <div>
@@ -68,7 +75,7 @@ export default function Register({ isOpen, onClose }: SignupModalProps) {
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 bg-black border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1d9bf0] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1d9bf0] focus:border-transparent"
                 />
               </div>
               <div>
@@ -77,22 +84,16 @@ export default function Register({ isOpen, onClose }: SignupModalProps) {
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 bg-black border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1d9bf0] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1d9bf0] focus:border-transparent"
                 />
               </div>
-              <button
+              <Button
                 type="submit"
-                className="w-full bg-white text-black rounded-full py-3 px-4 font-bold hover:bg-gray-200 transition duration-200"
+                className="w-full bg-blue-500 text-white rounded-full py-1 px-4 font-bold hover:bg-blue-500 transition duration-200"
               >
                 Sign up
-              </button>
+              </Button>
             </form>
-            <div className="mt-6 text-center text-gray-500">
-              Already have an account?{" "}
-              <a href="#" className="text-[#1d9bf0] hover:underline">
-                Log in
-              </a>
-            </div>
           </motion.div>
         </motion.div>
       )}
