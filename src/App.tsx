@@ -2,6 +2,7 @@
 import Card from "./components/Card";
 import Card2 from "./components/Card2";
 import { motion } from "motion/react";
+import Words from "./components/Words";
 
 function App() {
   const variants1 = {
@@ -24,6 +25,14 @@ function App() {
 
   return (
     <>
+      <h1 className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]">
+        I am a{" "}
+        <Words
+          words={["developer", "designer", "entrepreneur"]}
+          interval={2000}
+          className="text-blue-500"
+        />
+      </h1>
       <motion.h1
         initial="hidden"
         animate="visible"
