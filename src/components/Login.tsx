@@ -86,7 +86,7 @@ export default function Login({ isOpen, onClose }: LoginModalProps) {
                 }}
                 className="w-full bg-blue-500 text-white rounded-full py-1 px-4 font-bold hover:bg-blue-500 transition duration-200"
               >
-                Sign up
+                Sign in!
               </Button>
             </form>
           </motion.div>
