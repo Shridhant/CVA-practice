@@ -1,97 +1,87 @@
-import React from "react";
-import { FaGithub } from "react-icons/fa";
+// components/ui/card.tsx
+import * as React from "react";
 
-interface Content {
-  title: string;
-  description: string;
-  technologies: Array<string>;
-  techColors: Array<string>;
-  imageUrl: string;
-  projectUrl: string;
-  githubUrl: string;
-}
+import { cn } from "../utils/utils";
 
-interface ProjectCardProps {
-  projects: Array<Content>;
-}
+const Card = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-lg border border-neutral-200 bg-white text-neutral-950 shadow-sm dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50",
+      className
+    )}
+    {...props}
+  />
+));
+Card.displayName = "Card";
 
-const Card: React.FC<ProjectCardProps> = ({ projects }) => {
-  return (
-    <div className="flex flex-wrap justify-center items-center gap-6 py-10">
-      {projects.map((project, index) => (
-        <div
-          key={index}
-          className="relative bg-gray-800/30 border border-gray-600 w-[350px] shadow-lg rounded-xl overflow-hidden backdrop-filter backdrop-blur-lg bg-opacity-30"
-        >
-          <div className="absolute inset-0">
-            <img
-              src={project.imageUrl}
-              alt={`${project.title} Background`}
-              className="w-full h-full object-cover rounded-xl"
-            />
-          </div>
+const CardHeader = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    {...props}
+  />
+));
+CardHeader.displayName = "CardHeader";
 
-          <div className="relative z-10 h-full flex flex-col justify-between">
-            <div className="p-4">
-              <a
-                href={project.projectUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="relative h-52 overflow-hidden rounded-xl">
-                  <img
-                    src={project.imageUrl}
-                    alt={`${project.title} Thumbnail`}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                </div>
-              </a>
-            </div>
+const CardTitle = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h3
+    ref={ref}
+    className={cn(
+      "text-2xl font-semibold leading-none tracking-tight",
+      className
+    )}
+    {...props}
+  />
+));
+CardTitle.displayName = "CardTitle";
 
-            <div className="p-4 flex flex-col bg-gray-800/30 backdrop-filter backdrop-blur-lg bg-opacity-30 rounded-b-xl">
-              <div className="flex items-center justify-between mb-2">
-                <h2 className="text-xl font-semibold text-white">
-                  {project.title}
-                </h2>
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGithub
-                    className="text-gray-400 cursor-pointer hover:text-gray-500"
-                    size={24}
-                  />
-                </a>
-              </div>
+const CardDescription = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <p
+    ref={ref}
+    className={cn("text-sm text-neutral-500 dark:text-neutral-400", className)}
+    {...props}
+  />
+));
+CardDescription.displayName = "CardDescription";
 
-              <div className="flex justify-start items-center flex-wrap">
-                {project.technologies.map((techstack, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center text-gray-400 px-3 text-xs py-1 border border-gray-500 rounded-full mr-2 mb-2"
-                  >
-                    <div
-                      className="rounded-full h-2 w-2 mr-2"
-                      style={{
-                        backgroundColor:
-                          project.techColors[index % project.techColors.length],
-                      }}
-                    ></div>
-                    {techstack}
-                  </div>
-                ))}
-              </div>
+const CardContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+));
+CardContent.displayName = "CardContent";
 
-              <div className="mt-3">
-                <p className="text-gray-300 mb-3">{project.description}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
+const CardFooter = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center p-6 pt-0", className)}
+    {...props}
+  />
+));
+CardFooter.displayName = "CardFooter";
+
+export {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
 };
-
-export default Card;
