@@ -1,8 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}", // Adjust paths as needed for your project
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customBeige: "#f4dac1", // Add your custom color with a descriptive name
+      },
+    },
   },
   plugins: [],
 };
