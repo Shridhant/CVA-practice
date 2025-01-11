@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "./Button";
 import { Lock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -11,6 +12,7 @@ interface LoginModalProps {
 export default function Login({ isOpen, onClose }: LoginModalProps) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   return (
     <AnimatePresence>
@@ -79,7 +81,9 @@ export default function Login({ isOpen, onClose }: LoginModalProps) {
                 />
               </div>
               <Button
-                type="submit"
+                onClick={() => {
+                  navigate("/feed");
+                }}
                 className="w-full bg-blue-500 text-white rounded-full py-1 px-4 font-bold hover:bg-blue-500 transition duration-200"
               >
                 Sign up
