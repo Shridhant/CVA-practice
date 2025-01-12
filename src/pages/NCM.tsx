@@ -163,7 +163,7 @@ export default function NCM() {
                 <div className="w-full border-b border-gray-300"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className=" font-bold px-4 text-sm text-gray-500">
+                <span className=" font-bold px-4 text-sm text-gray-500 ">
                   Already have an account?
                 </span>
               </div>
@@ -171,7 +171,7 @@ export default function NCM() {
 
             <CoolB
               text="Sign in"
-              className="mx-auto w-1/2 md:w-1/3 font-bold"
+              className="mx-auto w-1/2 md:w-1/3 font-semibold"
               onClick={() => setIsLoginOpen(true)}
             />
           </div>
