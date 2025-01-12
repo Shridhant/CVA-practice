@@ -9,7 +9,7 @@ export default function Feed() {
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100 font-sans">
+    <div className="flex min-h-screen bg-white text-black font-sans">
       <LeftSidebar onProfileClick={() => setIsProfileMenuOpen(true)} />
       <div className="flex-grow flex flex-col">
         <MobileHeader onProfileClick={() => setIsProfileMenuOpen(true)} />

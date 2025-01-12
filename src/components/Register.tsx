@@ -52,7 +52,7 @@ export default function Register({ isOpen, onClose }: SignupModalProps) {
                 </svg>
               </button>
               <div className="flex justify-center items-center gap-3">
-                <Lock className="w-6 h-6 text-black" />
+                <Lock strokeWidth={3} className="w-6 h-6 text-black" />
                 <h2 className="text-2xl font-bold text-center flex-grow">
                   Sign Up!
                 </h2>
