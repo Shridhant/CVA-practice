@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "./Button";
-import { Lock } from "lucide-react";
+import { Lock, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 interface LoginModalProps {
@@ -37,20 +37,7 @@ export default function Login({ isOpen, onClose }: LoginModalProps) {
                 onClick={onClose}
                 className="text-gray-600 hover:text-gray-800"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <X strokeWidth={3} className="w-6 h-6 text-black" />
               </button>
               <div className="flex justify-center items-center gap-3">
                 <Lock className="w-6 h-6 text-black" />
