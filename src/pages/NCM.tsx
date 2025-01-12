@@ -39,6 +39,7 @@ export default function NCM() {
               alt="Background"
               className="rounded-3xl object-cover w-full h-full shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
             />
+
             {/* Floating music icons */}
             <motion.div
               variants={floatingVariant}
@@ -136,18 +137,19 @@ export default function NCM() {
             alt="Company Logo"
             className="size-24 mx-auto"
           />
+
           {/* Recording Moments Heading with Animation */}
           <div className="flex gap-1 md:gap-3 justify-center items-center">
             {/* <h1 className="text-4xl font-bold  text-center group relative">
               <span className="relative z-10">Recording Moments</span>
             </h1>{" "} */}
-            <h1 className="text-4xl md:text-5xl whitespace-nowrap font-bold mb-2 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-800 text-transparent bg-clip-text leading-normal">
+            <h1 className="text-4xl md:text-5xl whitespace-nowrap font-extrabold md:font-bold mb-2 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-800 text-transparent bg-clip-text leading-none text-center">
               Recording moments.
             </h1>
           </div>
           {/* Join Today Heading with Music Icon */}
 
-          <p className="font-medium text-gray-500 text-center flex items-center justify-center gap-4">
+          <p className="font-light md:font-normal text-gray-500 text-center flex items-center justify-center gap-4">
             Write, reflect, and receive personalized feedback from teachers to
             continuously evolve your music journey{" "}
           </p>
@@ -155,7 +157,7 @@ export default function NCM() {
           <div className="space-y-4 ">
             <CoolB
               text="Sign Up"
-              className="mx-auto w-1/2 md:w-1/3 font-bold"
+              className="bg-slate-50 mx-auto w-1/2 md:w-1/3 font-bold"
               onClick={() => setIsSignupOpen(true)}
             />
             <div className="relative py-4">
@@ -163,7 +165,7 @@ export default function NCM() {
                 <div className="w-full border-b border-gray-300"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className=" font-bold px-4 text-sm text-gray-500 ">
+                <span className="font-bold px-4 text-sm text-gray-500 ">
                   Already have an account?
                 </span>
               </div>
@@ -171,7 +173,7 @@ export default function NCM() {
 
             <CoolB
               text="Sign in"
-              className="mx-auto w-1/2 md:w-1/3 font-semibold"
+              className="bg-slate-50 mx-auto w-1/2 md:w-1/3 font-semibold"
               onClick={() => setIsLoginOpen(true)}
             />
           </div>
