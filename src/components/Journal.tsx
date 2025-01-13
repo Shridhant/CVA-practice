@@ -104,7 +104,7 @@ export default function Journal() {
       {posts.map((post) => (
         <div
           key={post.id}
-          className="bg-white border border-gray-200 rounded-lg shadow p-4 space-y-4"
+          className="bg-white border border-violet-300 rounded-lg shadow p-4 space-y-4"
         >
           {/* Post Header */}
           <div className="flex items-center space-x-3">

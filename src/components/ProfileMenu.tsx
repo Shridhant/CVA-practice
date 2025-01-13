@@ -56,7 +56,7 @@ const ProfileMenu: FC<ProfileMenuProps> = ({ isOpen, onClose }) => {
               <a
                 key={index}
                 href="#"
-                className="block py-3 hover:bg-gray-100 hover:translate-x-2 transition-all rounded-lg px-4 duration-200 text-base sm:text-lg"
+                className="block py-3 hover:bg-violet-500 hover:translate-x-2 transition-all rounded-lg px-4 duration-200 text-base sm:text-lg"
               >
                 {item}
               </a>

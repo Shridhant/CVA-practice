@@ -7,7 +7,7 @@ interface LeftSidebarProps {
 
 const LeftSidebar: FC<LeftSidebarProps> = ({ onProfileClick }) => {
   return (
-    <div className="hidden md:flex w-20 xl:w-64 h-screen flex-col justify-between border-r border-gray-200 ">
+    <div className="hidden md:flex w-20 xl:w-64 min-h-dvh flex-col justify-between border-r-2 border-violet-300 ">
       <div className="p-4">
         <img
           src="/logo.webp"
@@ -26,7 +26,7 @@ const LeftSidebar: FC<LeftSidebarProps> = ({ onProfileClick }) => {
             <a
               key={index}
               href="#"
-              className="flex items-center mt-4 mb-6 hover:bg-gray-100 hover:translate-x-2 transition-all rounded-lg px-4 duration-200  p-3 "
+              className="flex items-center mt-4 mb-6 hover:bg-violet-500 hover:translate-x-2 transition-all rounded-lg px-4 duration-200 p-3 "
             >
               <item.icon className="size-6 mr-4" />
               <span className="text-base sm:text-lg hidden xl:inline">

@@ -46,7 +46,7 @@ As you explore these techniques, always keep your musical goals in mind. The bes
 
 const RightSidebar = () => {
   return (
-    <div className="hidden lg:block w-80 p-4 overflow-y-auto ">
+    <div className="hidden lg:block w-80 p-4 overflow-y-auto border-l-2 border-violet-300">
       <div
         className="border-2 border-violet-300 rounded-lg p-4 mb-4 bg-gradient-to-tr
 from-white
