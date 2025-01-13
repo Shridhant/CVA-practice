@@ -1,5 +1,6 @@
 import { Music, Image, Paperclip, MessageCircle, Heart } from "lucide-react";
 import { useState } from "react";
+import Journal from "./Journal";
 
 const MainContent = () => {
   const [text, setText] = useState<string>("");
@@ -8,7 +9,7 @@ const MainContent = () => {
   };
 
   return (
-    <main className="flex-grow border-r border-gray-200 dark:border-gray-700 overflow-y-auto">
+    <main className="flex-grow border-r border-gray-200 overflow-y-auto">
       <img
         src="/logo.webp"
         alt="Company Logo"
@@ -37,40 +38,7 @@ const MainContent = () => {
           </div>
         </div>
         {/* Sample journal entries */}
-        {[1].map((entry) => (
-          <div
-            key={entry}
-            className="border-b border-gray-200 dark:border-gray-700 py-4"
-          >
-            <div className="flex items-start mb-2">
-              <img
-                src={`https://i.waifu.pics/HNEg0-Q.png`}
-                alt="User Avatar"
-                className="size-6 rounded-full mr-3"
-              />
-              <div>
-                <span className="font-bold mr-2">Shridhant</span>
-                <span className="text-sm text-gray-600 dark:text-gray-400">
-                  @Shridhant
-                </span>
-              </div>
-            </div>
-            <p className="mb-2 text-base sm:text-lg leading-relaxed">
-              Practiced Chopin's Nocturne in E-flat major for an hour today.
-              Focusing on the left-hand arpeggios and overall dynamics.
-            </p>
-
-            <div className="flex justify-around text-sm text-gray-600 dark:text-gray-400">
-              <button className="hover:text-blue-500 flex items-center">
-                <MessageCircle className="h-4 w-4 mr-1" /> Comment
-              </button>
-
-              <button className="hover:text-red-500 flex items-center">
-                <Heart className="h-4 w-4 mr-1" /> Appreciate
-              </button>
-            </div>
-          </div>
-        ))}
+        <Journal />
       </div>
     </main>
   );

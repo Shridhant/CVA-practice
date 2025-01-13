@@ -46,11 +46,18 @@ As you explore these techniques, always keep your musical goals in mind. The bes
 
 const RightSidebar = () => {
   return (
-    <div className="hidden lg:block w-80 p-4 overflow-y-auto">
-      <div className="bg-gray-100 rounded-lg p-4 mb-4">
+    <div className="hidden lg:block w-80 p-4 overflow-y-auto ">
+      <div
+        className="border-2 border-violet-300 rounded-lg p-4 mb-4 bg-gradient-to-tr
+from-white
+via-slate-50
+to-violet-600"
+      >
         <h2 className="text-lg sm:text-xl font-semibold leading-snug mb-4">
           News
         </h2>
+        <hr />
+
         {Items.map((item) => (
           <Dialog key={item.id} news={item} />
         ))}
