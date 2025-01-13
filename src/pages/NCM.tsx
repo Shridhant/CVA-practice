@@ -3,7 +3,7 @@ import Register from "../components/Register";
 import Login from "../components/Login";
 
 import { CoolB } from "../components/CoolB";
-import { Music4 } from "lucide-react"; // Import the music icon
+
 import { motion } from "framer-motion";
 
 export default function NCM() {
@@ -31,9 +31,9 @@ export default function NCM() {
   return (
     <div
       className="flex min-h-screen text-white absolute inset-0 -z-10 h-full w-full bg-gradient-to-tl
-from-violet-400
+from-slate-100
 via-white
-to-violet-500"
+to-violet-300"
     >
       {/* Left section - Image */}
       <div className="hidden lg:flex lg:w-1/2 items-center justify-center relative overflow-hidden">
@@ -177,14 +177,12 @@ to-violet-500"
           />
 
           {/* Recording Moments Heading with Animation */}
-          <div className="flex gap-1 md:gap-3 justify-center items-center">
-            {/* <h1 className="text-4xl font-bold  text-center group relative">
-              <span className="relative z-10">Recording Moments</span>
-            </h1>{" "} */}
-            <h1 className="text-4xl md:text-5xl whitespace-nowrap font-extrabold md:font-bold mb-2 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-800 text-transparent bg-clip-text leading-none text-center">
+          <div className="gap-1 md:gap-3 ">
+            <h1 className="text-4xl pb-3 md:text-5xl whitespace-nowrap font-extrabold md:font-bold mb-2 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-800 text-transparent bg-clip-text leading-10 text-center">
               Recording moments.
             </h1>
           </div>
+
           {/* Join Today Heading with Music Icon */}
 
           <p className="font-light md:font-normal text-gray-500 text-center flex items-center justify-center gap-4">
