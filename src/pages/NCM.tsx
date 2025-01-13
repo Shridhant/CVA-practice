@@ -29,15 +29,21 @@ export default function NCM() {
   };
 
   return (
-    <div className="flex min-h-screen text-white absolute inset-0 -z-10 h-full w-full bg-gradient-to-tl from-slate-50 to-purple-400">
+    <div
+      className="flex min-h-screen text-white absolute inset-0 -z-10 h-full w-full bg-gradient-to-tl
+from-violet-400
+via-white
+to-violet-500"
+    >
       {/* Left section - Image */}
       <div className="hidden lg:flex lg:w-1/2 items-center justify-center relative overflow-hidden">
         <div className="w-full h-full p-6 flex items-center justify-center">
-          <div className="w-full h-full max-w-2xl max-h-2xl relative">
+          <div className="w-full h-full max-w-2xl max-h-2xl flex items-center justify-center relative">
+            {/* <div className="absolute inset-0  opacity-30 rounded-3xl pointer-events-none"></div> */}
             <img
-              src="/image.jpg"
+              src="/logo.webp"
               alt="Background"
-              className="rounded-3xl object-cover w-full h-full shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+              className="h-fit w-fit rounded-3xl object-cover "
             />
 
             {/* Floating music icons */}
@@ -45,84 +51,116 @@ export default function NCM() {
               variants={floatingVariant}
               initial="initial"
               animate="animate"
-              className="absolute top-10 left-10"
+              className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             >
               <img
                 src="/banjo.svg"
-                alt="Mic"
-                className="size-16 text-violet-500"
+                alt="Banjo"
+                className="h-12 w-12 text-violet-500"
               />
             </motion.div>
+
             <motion.div
               variants={floatingVariant}
               initial="initial"
               animate="animate"
-              className="absolute top-1/4 right-10"
+              className="absolute top-1/4 right-0 transform -translate-x-1/2 -translate-y-1/2"
             >
               <img
                 src="/drum.svg"
-                alt="Radio"
-                className="size-16 text-violet-500"
+                alt="Drum"
+                className="h-12 w-12 text-violet-500"
               />
             </motion.div>
+
             <motion.div
               variants={floatingVariant}
               initial="initial"
               animate="animate"
-              className="absolute bottom-1/4 left-10"
+              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2"
             >
               <img
                 src="/fiddle.svg"
-                alt="Headphones"
-                className="size-16 text-violet-500"
+                alt="Fiddle"
+                className="h-12 w-12 text-violet-500"
               />
             </motion.div>
+
             <motion.div
               variants={floatingVariant}
               initial="initial"
               animate="animate"
-              className="absolute bottom-10 right-10"
+              className="absolute bottom-1/4 left-0 transform translate-x-1/2 translate-y-1/2"
             >
               <img
                 src="/guitar.svg"
-                alt="Music Note"
-                className="size-16 text-violet-500"
+                alt="Guitar"
+                className="h-12 w-12 text-violet-500"
               />
             </motion.div>
+
             <motion.div
               variants={floatingVariant}
               initial="initial"
               animate="animate"
-              className="absolute top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-0 transform -translate-y-1/2 translate-x-1/2"
             >
               <img
                 src="/trumpet.svg"
-                alt="Center Music"
-                className="size-16 text-violet-500"
+                alt="Trumpet"
+                className="h-12 w-12 text-violet-500"
               />
             </motion.div>
+
             <motion.div
               variants={floatingVariant}
               initial="initial"
               animate="animate"
-              className="absolute top-16 right-1/4"
+              className="absolute top-1/2 right-0 transform -translate-y-1/2 -translate-x-1/2"
             >
               <img
                 src="/trombone.svg"
-                alt="Guitar"
-                className="size-16 text-violet-500"
+                alt="Trombone"
+                className="h-12 w-12 text-violet-500"
               />
             </motion.div>
+
             <motion.div
               variants={floatingVariant}
               initial="initial"
               animate="animate"
-              className="absolute bottom-16 left-1/4"
+              className="absolute top-3/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2"
             >
               <img
                 src="/gramophone.svg"
-                alt="Speaker"
-                className="size-16 text-violet-500"
+                alt="Gramophone"
+                className="h-12 w-12 text-violet-500"
+              />
+            </motion.div>
+
+            <motion.div
+              variants={floatingVariant}
+              initial="initial"
+              animate="animate"
+              className="absolute top-3/4 right-1/4 transform -translate-x-1/2 -translate-y-1/2"
+            >
+              <img
+                src="/violin.svg"
+                alt="Violin"
+                className="h-12 w-12 text-violet-500"
+              />
+            </motion.div>
+
+            <motion.div
+              variants={floatingVariant}
+              initial="initial"
+              animate="animate"
+              className="absolute top-1/4 right-3/4 transform -translate-x-1/2 -translate-y-1/2"
+            >
+              <img
+                src="/cymball.svg"
+                alt="Cymbal"
+                className="h-12 w-12 text-violet-500"
               />
             </motion.div>
           </div>
