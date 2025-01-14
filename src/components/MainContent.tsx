@@ -9,11 +9,11 @@ const MainContent = () => {
   };
 
   return (
-    <main className="flex-grow border-r border-gray-200 overflow-y-auto">
+    <main className="flex-grow border-gray-200 overflow-y-auto">
       <img
         src="/logo.webp"
         alt="Company Logo"
-        className="size-16 hidden md:block mt-2 mx-auto"
+        className="size-16 hidden md:block mt-2 mx-auto shadow-2xl"
       />
       <div className="p-4">
         <div className="bg-gray-100 border border-violet-400 p-4 rounded-lg mb-4">
