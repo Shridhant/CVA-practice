@@ -7,7 +7,7 @@ interface LeftSidebarProps {
 
 const LeftSidebar: FC<LeftSidebarProps> = ({ onProfileClick }) => {
   return (
-    <div className="hidden md:flex w-20 xl:w-64 min-h-dvh flex-col justify-between hover:shadow-2xl transition-all duration-200 ease-in">
+    <div className="hidden md:flex w-20 xl:w-64 min-h-dvh flex-col justify-between shadow-2xl transition-all duration-200 ease-in">
       <div className="p-4">
         <img
           src="/logo.webp"

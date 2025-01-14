@@ -18,7 +18,7 @@ const MainContent = () => {
       <div className="p-4">
         <div className="bg-gray-100 border border-violet-400 p-4 rounded-lg mb-4">
           <textarea
-            className="w-full border rounded-lg p-3 border-violet-300 text-black placeholder-gray-500 text-base sm:text-lg leading-relaxed focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+            className="w-full border rounded-lg p-3 border-violet-300 text-black placeholder-gray-500 text-base sm:text-lg leading-relaxed focus:ring-2 focus:ring-violet-300 focus:border-violet-300 outline-none"
             placeholder="What did you practice today?"
             rows={3}
             value={text}
