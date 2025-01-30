@@ -1,5 +1,6 @@
 import NewsCard2 from "../components/NewsCard2";
 import NewsCard from "../components/NewsCard";
+import News from "../components/News";
 
 function Cards() {
   return (
@@ -19,6 +20,16 @@ function Cards() {
           <NewsCard2 variant="standard" />
           <NewsCard2 variant="premium" />
           <NewsCard />
+          <News
+            type="bullish"
+            date="December 5, 2024"
+            headline="Hong Kong Expands Cryptocurrency Market with New Exchange Approvals."
+          />
+          <News
+            type="bearish"
+            date="December 19, 2024"
+            headline="Solana Price Faces Potential Dip Below $200 After Federal Reserve Cut."
+          />
         </div>
       </div>
     </div>
