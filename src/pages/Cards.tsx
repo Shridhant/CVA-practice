@@ -1,6 +1,7 @@
 import NewsCard2 from "../components/NewsCard2";
 import NewsCard from "../components/NewsCard";
 import News from "../components/News";
+import SpotlightCard from "../components/SpotlightCard";
 
 function Cards() {
   return (
@@ -30,6 +31,13 @@ function Cards() {
             date="December 19, 2024"
             headline="Solana Price Faces Potential Dip Below $200 After Federal Reserve Cut."
           />
+          import SpotlightCard from './SpotlightCard';
+          <SpotlightCard
+            className="custom-spotlight-card"
+            spotlightColor="rgba(0, 229, 255, 0.2)"
+          >
+            As basic as it can get.
+          </SpotlightCard>
         </div>
       </div>
     </div>
