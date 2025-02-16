@@ -2,6 +2,7 @@ import NewsCard2 from "../components/NewsCard2";
 import NewsCard from "../components/NewsCard";
 import News from "../components/News";
 import SpotlightCard from "../components/SpotlightCard";
+import { Newspaper } from "lucide-react";
 
 function Cards() {
   return (
@@ -33,11 +34,12 @@ function Cards() {
           />
           import SpotlightCard from './SpotlightCard';
           <SpotlightCard
+            icon={<Newspaper className="size-8 text-neutral-900"></Newspaper>}
             className="custom-spotlight-card"
-            spotlightColor="rgba(0, 229, 255, 0.2)"
-          >
-            As basic as it can get.
-          </SpotlightCard>
+            spotlightColor="rgba(0, 150, 255, 0.2)"
+            title="Get Started"
+            description="Start your free trial today."
+          ></SpotlightCard>
         </div>
       </div>
     </div>

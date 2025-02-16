@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import type React from "react";
+import { useRef, useState } from "react";
 
 interface Position {
   x: number;
@@ -8,12 +9,17 @@ interface Position {
 interface SpotlightCardProps extends React.PropsWithChildren {
   className?: string;
   spotlightColor?: `rgba(${number}, ${number}, ${number}, ${number})`;
+  icon: React.ReactNode;
+  title: string;
+  description: string;
 }
 
 const SpotlightCard: React.FC<SpotlightCardProps> = ({
-  children,
   className = "",
   spotlightColor = "rgba(255, 255, 255, 0.25)",
+  icon,
+  title,
+  description,
 }) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -62,7 +68,11 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
           background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`,
         }}
       />
-      {children}
+      <div className="relative z-10">
+        <div className="mb-4 text-primary">{icon}</div>
+        <h1 className="text-2xl font-bold mb-2 text-white">{title}</h1>
+        <p className="text-neutral-400">{description}</p>
+      </div>
     </div>
   );
 };
