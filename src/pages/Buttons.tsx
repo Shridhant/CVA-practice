@@ -1,5 +1,7 @@
 import CoolButton from "../components/CoolButton";
 import Button from "../components/Button";
+import Logos from "../components/Logos";
+import { Container } from "lucide-react";
 function Buttons() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-3 ">
@@ -13,6 +15,7 @@ function Buttons() {
       <Button variant="secondary" bgColor="bg-green-500">
         World
       </Button>
+      <Logos href="google.com" logo={<Container />} />
     </div>
   );
 }
