@@ -12,7 +12,7 @@ function Landing() {
     visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
   };
   return (
-    <section className=" h-screen flex flex-col  justify-center items-center text-center ">
+    <section className=" h-screen flex flex-col  justify-center items-center text-center bg-slate-300 ">
       <motion.h1
         initial="hidden"
         animate="visible"

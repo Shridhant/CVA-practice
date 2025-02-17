@@ -9,7 +9,10 @@ export default function Logos({
   logo: React.ReactNode;
 }) {
   return (
-    <a href={href} className="group relative h-32 max-w-32 w-full">
+    <a
+      href={href}
+      className="group relative h-32 max-w-32 w-full rounded-sm overflow-hidden shadow-md transition-all duration-200 dark:bg-slate-600 group-hover:border-transparent group-hover:shadow-lg"
+    >
       <div className="absolute inset-0 flex items-center justify-center rounded-sm bg-zinc-50 p-2 text-center transition-all duration-200 group-hover:opacity-50 group-hover:blur-[10px]">
         {logo}
       </div>
